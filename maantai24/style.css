@@ -1,0 +1,92 @@
+
+
+    /*////////////////////
+    // Positioning items
+    //////////////////////
+
+    Reset *
+    Display: inline vs block
+    https://www.w3schools.com/cssref/pr_class_display.asp
+
+    Box-sizing
+    https://www.w3schools.com/css/css3_box-sizing.asp
+
+    Using percentages and max-width
+    https://www.w3schools.com/cssref/css_units.asp
+
+    Float and clear
+    https://www.w3schools.com/cssref/pr_class_float.asp
+
+    Flexbox - https://www.w3schools.com/css/css3_flexbox.asp
+
+    Absolute/Relative positioning
+    https://www.w3schools.com/cssref/pr_class_position.asp
+
+    Centering
+    https://www.w3schools.com/css/css_align.asp
+
+    */
+
+* {
+}
+
+body {
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+    color: aliceblue;
+}
+
+#red { background-color: red;}
+#green { background-color: green;}
+#blue { background-color: blue;}
+#yellow { background-color: yellow; color: black;}
+#orange { background-color: orange;}
+
+.clear { clear: both;}
+
+/* img */
+img {
+}
+
+/* container */
+.container {
+}
+
+/* relative and absolute positioning with blue */
+#blue {
+}
+p {
+    color:green;
+}
+
+.infobox{
+    color:red;
+}
+p {
+    color:pink;
+}
+#orangea{
+    color:orange;
+}
+    a:link {
+        color: red;
+    }
+
+    /* visited link */
+    a:visited {
+        color: green;
+    }
+
+    /* mouse over link */
+    a:hover {
+        color: hotpink;
+    }
+
+    /* selected link */
+    a:active {
+        color: blue;
+    }
