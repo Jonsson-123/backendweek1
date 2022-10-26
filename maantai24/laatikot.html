@@ -33,7 +33,7 @@
         */
 
         * {
-            box-sizing: border-box;
+         box-sizing: border-box;
         }
 
         body {
@@ -42,7 +42,7 @@
 
         .box {
             height: 100px;
-            width: 100px;
+            width: 20%;
             border: 1px solid black;
             color: aliceblue;
             display: block;
@@ -97,19 +97,50 @@
             text-align: center;
             border: 1px dashed black;
         }
+        p:first-letter{
+            font-size: 200%;
+            color: #8A2BE2;
+        }
+        p:before{
+        content:"Read this: ";
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        #isoboxi{
+            background-color:rebeccapurple;
+            width:500px;
+            height:500px;
+            position:relative;
+        }
+        #pieni1{
+            background-color:rosybrown;
+            width:150px;
+            height:150px;
+            position: absolute;
+          bottom:0;
+            right:0;
+        }
+        #pieni2{
+            background-color:cyan;
+            width:150px;
+            height:150px;
 
+        }
     </style>
 </head>
 
 <body>
-
+<nav class="clearfix">
 <div class="box" id="red">Box 1</div>
 <div class="box" id="green">Box 2</div>
 <div class="box" id="blue">Box 3</div>
 <div class="box" id="yellow">Box 4</div>
 <div class="box" id="orange">Box 5</div>
+</nav>
 
-<div class="clear"></div>
 <!-- Float continues, clearing -->
 
 <h1>Heading 1</h1>
@@ -127,7 +158,15 @@
     eros, in ornare tellus scelerisque non. Morbi interdum erat eget eros ullamcorper, id cursus est venenatis.
 
 </p>
-<!-- Responsive images and centering -->
 
+<div style="background-color:pink; width:50%">
+<p style="width:50%; background-color:red;">JepJEP</p>
+</div>
+<!-- Responsive images and centering -->
+<h2>positiointi</h2>
+<div id="isoboxi">
+    <div id="pieni1"></div>
+    <div id="pieni2"></div>
+</div>
 </body>
 </html>
