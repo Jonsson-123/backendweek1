@@ -1,0 +1,103 @@
+@font-face{
+    font-family: 'Poppins-Bold';
+    src: url("fonts/Poppins-Bold.ttf");
+
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin:0;
+    font-family: "Agency FB",sans-serif;
+}
+main {
+    height:100vh;
+    background-color:aqua;
+}
+#kortti{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    width:300px;
+    height:350px;
+    background:white;
+    box-shadow: 7px 7px 7px  rgba(0,0,0,0.75);
+
+}
+#vasen{
+    float:left;
+    position:relative;
+    background-color:white;
+    height:100%;
+    width:50%;
+
+}
+#oikea{
+    float:right;
+    background-color:lightgrey;
+    height:100%;
+    width:50%;
+    position:relative;
+}
+aside {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%)
+}
+h2{
+    margin:0 0 3.5rem 0;
+    font-size: 2.5rem;
+    font-family: Poppins-Bold, sans-serif;
+}
+h2::after {
+    content:" v1";
+    font-size: 1.5rem;
+}
+.button{
+    background:white;
+    padding: 10px;
+    border-radius: 20px;
+    border:none;
+    cursor:pointer;
+    width:100px;
+    height: 50px;
+    text-align: center;
+}
+.button:hover{
+    background:grey;
+}
+li {
+    margin:2rem 0;
+    padding:0.25rem;
+    font-size: 1.5rem;
+
+}
+.bottom{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform: translate(-50%, 0);
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+}
+.myarrow {
+    transform: rotate(45deg) translate(-50%, 0);
+
+}
+#lisaaP{
+    margin:1rem 0;
+    font-size: 2rem;
+}
+i{
+    position: relative;
+    left:49%;
+}
