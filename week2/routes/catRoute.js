@@ -1,6 +1,6 @@
 'use strict';
 const express = require('express');
-const {cat_list_get, get_cat, cat_get} = require('../controllers/catController');
+const {cat_list_get, cat_get} = require('../controllers/catController');
 const router = express.Router();
 
 
