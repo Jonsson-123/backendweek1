@@ -24,6 +24,7 @@ const user_post = async (req, res) => {
         req.body.name,
         req.body.email,
         req.body.passwd,
+
     ];
     const result = await addUser(data);
     if (result.affectedRows > 0) {

@@ -2,13 +2,13 @@
 // catController
 const {getAllCats, getCat, addCat, updateCat, deleteCat} = require('../models/catModel');
 
-const cat_list_get = async (req, res) => {
-    const kissat = await getAllCats();
+const cat_list_get = async (req, res, next) => {
+    const kissat = await getAllCats(next);
     res.json(kissat);
 };
 
-const cat_get = async (req, res) => {
-    const cat = await getCat(req.params.id);
+const cat_get = async (req, res, next) => {
+    const cat = await getCat(req.params.id, next);
     if (cat.length > 0) {
         console.log('kissa', cat);
         res.json(cat.pop());
@@ -39,6 +39,7 @@ const cat_post = async (req, res) => {
 };
 const cat_put = async (req, res) => {
     console.log('cat put', req.body);
+
     const data = [
         req.body.name,
         req.body.birthdate,
@@ -49,8 +50,7 @@ const cat_put = async (req, res) => {
         const result = await updateCat(data);
         if (result.affectedRows > 0) {
             res.json({
-                message: 'cat updated',
-                cat_id: result.insertId,
+                message: 'cat modified',
             });
 
         } else {
