@@ -20,7 +20,7 @@
         <div class="forms">
             <div class="form-wrapper">
                 <h3>Add user</h3>
-                <form novalidate action="http://localhost:3000/user" method="post" class="light-border" id="addUserForm">
+                <form action="http://localhost:3000/user" method="post" class="light-border" id="addUserForm">
                     <input minlength="3" required class="light-border" type="text" name="name" placeholder="Name">
                     <input required class="light-border" type="email" name="email" placeholder="email">
                     <input pattern="(?=.*[\p{Lu}]).{8,}" required class="light-border" type="password" name="passwd" placeholder="Password">
