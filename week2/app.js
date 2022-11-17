@@ -4,9 +4,10 @@ const cors = require('cors');
 const catRoute = require('./routes/catRoute');
 const userRoute = require('./routes/userRoute');
 const authRoute = require('./routes/authRoute');
+const {httpError} = require('./utils/errors');
+const passport = require('./utils/pass')
 const app = express();
 const port = 3000;
-const {httpError} = require('./utils/errors');
 
 app.use(cors());
 app.use(express.json()) // for parsing application/json
