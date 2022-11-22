@@ -1,11 +1,20 @@
 'use strict';
 const express = require('express');
 const multer = require('multer');
-const upload = multer({dest: 'uploads/'});
+const upload = multer({dest: 'uploads/', fileFilter});
 const {cat_list_get, cat_get, cat_post, cat_put, cat_delete} = require(
     '../controllers/catController');
 const {body} = require('express-validator');
+const {httpError} = require('../utils/errors');
 const router = express.Router();
+
+function fileFilter(req, file, cb){
+    if(file.mimetype.includes('image')){
+        cb(null, true);
+    } else {
+        cb(httpError('Invalid file', 400));
+    }
+}
 
 router.route('/').
 get(cat_list_get).
