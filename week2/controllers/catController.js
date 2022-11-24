@@ -5,6 +5,8 @@ const {getCat, getAllCats, addCat, updateCat, deleteCat} = require(
 const {httpError} = require('../utils/errors');
 const {validationResult} = require('express-validator');
 const sharp = require('sharp');
+const {getCoordinates} = require('../utils/imageMeta');
+
 const cat_list_get = async (req, res, next) => {
     try {
         const kissat = await getAllCats(next);
@@ -53,12 +55,15 @@ const cat_post = async (req, res, next) => {
         png().
         toFile('./thumbnails/' + req.file.filename);
 
+        const coords = await getCoordinates(req.file.path);
+
         const data = [
             req.body.name,
             req.body.birthdate,
             req.body.weight,
             req.user.user_id,
             req.file.filename,
+            coords,
         ];
 
         const result = await addCat(data, next);
