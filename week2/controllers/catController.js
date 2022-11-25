@@ -55,16 +55,32 @@ const cat_post = async (req, res, next) => {
         png().
         toFile('./thumbnails/' + req.file.filename);
 
+
         const coords = await getCoordinates(req.file.path);
 
-        const data = [
-            req.body.name,
-            req.body.birthdate,
-            req.body.weight,
-            req.user.user_id,
-            req.file.filename,
-            JSON.stringify(coords),
-        ];
+
+        let data = [];
+        if (coords[0]!==undefined){
+
+             data = [
+                req.body.name,
+                req.body.birthdate,
+                req.body.weight,
+                req.user.user_id,
+                req.file.filename,
+                JSON.stringify(coords),
+            ];
+
+        } else {
+             data = [
+                req.body.name,
+                req.body.birthdate,
+                req.body.weight,
+                req.user.user_id,
+                req.file.filename,
+                 '[24.74,60.24]'
+             ];
+        }
 
         const result = await addCat(data, next);
         if (result.affectedRows < 1) {
